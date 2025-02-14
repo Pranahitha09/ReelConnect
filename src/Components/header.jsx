@@ -226,7 +226,7 @@ const Header = () => {
             className="block bg-red-600 px-4 py-2 rounded hover:bg-red-700 w-fit mx-auto mt-2 flex items-center space-x-2 transition"
           >
             <FaUser />
-            <span>Sign In</span>
+            <span>Login</span>
           </NavLink>
         </div>
       )}
