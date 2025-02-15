@@ -27,7 +27,7 @@
   }
   
   .footer-links a {
-    color: white;
+    color: rgb(249, 249, 249);
     text-decoration: none;
     transition: color 0.3s;
   }
