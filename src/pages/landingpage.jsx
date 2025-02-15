@@ -4,7 +4,7 @@ import movie1 from "../assets/movie1.jpg"
 export default function LandingPage() {
   return (
     <div className="landing-container">
-      <h1 className="welcome-text">Welcome to MovieHive</h1>
+      <h1 className="welcome-text">Welcome to ReelConnect</h1>
       <p className="sub-text">Your ultimate movie club experience 🎬</p>
 
       {/* Movie Scrolling Banner */}
