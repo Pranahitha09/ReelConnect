@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         {/* MovieHive Branding */}
-        <h2 className="footer-logo">MovieHive</h2>
+        <h2 className="footer-logo">ReelConnect</h2>
         <p>Explore the world of cinema with us! 🎬</p>
 
         {/* Quick Links */}
@@ -35,7 +35,7 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <p className="copyright">© 2025 MovieHive. All rights reserved.</p>
+        <p className="copyright">© 2025 ReelConnect. All rights reserved.</p>
       </div>
     </footer>
   );

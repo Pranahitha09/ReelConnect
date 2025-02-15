@@ -164,7 +164,7 @@ const Header = () => {
       <div className="relative flex justify-between items-center z-10">
         {/* Logo */}
         <div className="text-red-600 text-4xl font-bold cursor-pointer">
-          MovieHive
+          ReelConnect
         </div>
 
         {/* Navigation */}
