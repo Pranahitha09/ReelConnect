@@ -88,14 +88,22 @@
     text-align: center;
     margin-top: 20px 0 15px; 
 }
-
-.register-link p a{
-    color: #fff;
+/* 
+.register-link p NavLink{
+    color: red;
     text-decoration: none;
     font-weight: 600;
 }
 
 .register-link p a:hover{
     text-decoration: underline;
-}
+} */
+ .register{
+    color: red;
+    font-weight: bold;
+ }
 
+.register:hover{
+    text-decoration: underline;
+    text-shadow: red;
+}
