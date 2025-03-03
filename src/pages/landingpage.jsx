@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import "../pages/landingpage.css"; // Import styles
-import movie1 from "../assets/movie1.jpg"
+// import movie1 from "../assets/movie1.jpg"
 export default function LandingPage() {
   return (
     <div className="landing-container">
@@ -10,7 +10,7 @@ export default function LandingPage() {
       {/* Movie Scrolling Banner */}
       <div className="movie-scroller">
         <div className="scroller-track">
-          <img src="../../public/movie1.jpg" alt="Movie 1" />
+          <img src="../assets/movie1.jpg" alt="Movie 1" />
           <img src="../assets/movie2.jpg" alt="Movie 2" />
           <img src="../assets/movie3.jpg" alt="Movie 3" />
           <img src="../assets/movie4.jpg" alt="Movie 4" />
