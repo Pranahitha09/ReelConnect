@@ -1,125 +1,61 @@
-// // import { useState } from "react";
-// // import { FaBars, FaTimes, FaUser } from "react-icons/fa";
-// // import { NavLink } from "react-router-dom";
-
-// // const Header = () => {
-// //   const [isOpen, setIsOpen] = useState(false);
-
-// //   return (
-// //     <header 
-// //       className="relative bg-cover bg-center text-white px-6 py-4" 
-// //       style={{ backgroundImage: "url('/assets/background.jpg')" }}
-// //     >
-// //       {/* Dark Overlay for better visibility */}
-// //       <div className="absolute inset-0 bg-black bg-opacity-50 z-0"></div>
-
-// //       <div className="relative flex justify-between items-center z-10">
-// //         {/* Logo */}
-// //         <div className="text-red-600 text-4xl font-bold cursor-pointer">
-// //           MovieHive
-// //         </div>
-
-// //         {/* Navigation */}
-// //         <nav className="hidden md:flex w-1/2 justify-evenly text-lg">
-// //           {["Home", "Explore", "Trending", "Genres", "Watchlist"].map((item) => (
-// //             <a 
-// //               key={item} 
-// //               href={#${item.toLowerCase()}} 
-// //               className="relative transition duration-300 hover:text-red-500"
-// //             >
-// //               {item}
-// //               <span className="absolute bottom-0 left-0 w-0 h-1 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
-// //             </a>
-// //           ))}
-// //         </nav>
-
-// //         {/* Sign In / Profile */}
-// //         {/* Sign In as a NavLink Styled as a Button */}
-// //     <NavLink 
-// //     to="/login"
-// //     className="bg-red-600 px-4 py-2 rounded hover:bg-red-700 flex items-center space-x-2 transition"
-// //     >
-// //   <FaUser />
-// //   <span>Sign In</span>
-// // </NavLink>
-
-
-// //         {/* Mobile Menu */}
-// //         <div className="md:hidden">
-// //           <button onClick={() => setIsOpen(!isOpen)} className="text-white text-2xl">
-// //             {isOpen ? <FaTimes /> : <FaBars />}
-// //           </button>
-// //         </div>
-// //       </div>
-
-// //       {/* Mobile Nav */}
-// //       {isOpen && (
-// //         <div className="absolute top-full left-0 w-full bg-black bg-opacity-90 text-center py-4 md:hidden">
-// //           {["Home", "Explore", "Trending", "Genres", "Watchlist"].map((item) => (
-// //             <a 
-// //               key={item} 
-// //               href={#${item.toLowerCase()}} 
-// //               className="block py-2 text-lg transition hover:text-red-500"
-// //             >
-// //               {item}
-// //             </a>
-// //           ))}
-// //         </div>
-// //       )}
-// //     </header>
-// //   );
-// // };
-
-// // export default Header;
-
-
-
 // import { useState } from "react";
-// import { FaBars, FaTimes, FaUser } from "react-icons/fa";
+// import { FaBars, FaTimes, FaUser, FaGlobe } from "react-icons/fa";
 // import { NavLink } from "react-router-dom";
+// import "./header.css"; // Import external CSS
 
 // const Header = () => {
 //   const [isOpen, setIsOpen] = useState(false);
+//   const [isLangOpen, setIsLangOpen] = useState(false);
 
 //   return (
-//     <header 
-//       className="relative bg-cover bg-center text-white px-6 py-4" 
-//       style={{ backgroundImage: "url('/assets/background.jpg')" }}
-//     >
-//       {/* Dark Overlay for better visibility */}
-//       <div className="absolute inset-0 bg-black bg-opacity-50 z-0"></div>
+//     <header className="header">
+//       {/* Dark Overlay */}
+//       <div className="overlay"></div>
 
-//       <div className="relative flex justify-between items-center z-10">
+//       <div className="header-container">
 //         {/* Logo */}
-//         <div className="text-red-600 text-4xl font-bold cursor-pointer">
-//           MovieHive
-//         </div>
+//         <div className="logo">ReelConnect</div>
 
-//         {/* Navigation */}
-//         <nav className="hidden md:flex w-1/2 justify-evenly text-lg">
-//           {["Home", "Explore", "Trending", "Genres", "Watchlist"].map((item) => (
-//             <NavLink 
-//               key={item} 
-//               to={/${item.toLowerCase()}} 
-//               className="relative transition duration-300 hover:text-red-500"
-//             >
-//               {item}
-//             </NavLink>
-//           ))}
+//         {/* Navigation (Centered) */}
+//         <nav className="nav-links">
+//           <NavLink to="/" className="nav-item">Home</NavLink>
+//           <NavLink to="/explore" className="nav-item">Explore</NavLink>
+//           <NavLink to="/trending" className="nav-item">Trending</NavLink>
+//           <NavLink to="/genres" className="nav-item">Genres</NavLink>
+//           <NavLink to="/watchlist" className="nav-item">Watchlist</NavLink>
 //         </nav>
 
-//         {/* 🔥 Sign In as a NavLink Styled as a Button */}
-//         <NavLink 
-//           to="/login"
-//           className="bg-red-600 px-4 py-2 rounded hover:bg-red-700 flex items-center space-x-2 transition"
-//         >
-//           <FaUser />
-//           <span>Sign In</span>
-//         </NavLink>
+//         {/* Authentication & Language */}
+//         <div className="right-buttons">
+//           {/* Language Selector */}
+//           <div 
+//             className="language-dropdown" 
+//             onMouseEnter={() => setIsLangOpen(true)} 
+//             onMouseLeave={() => setIsLangOpen(false)}
+//           >
+//             <button className="language-btn">
+//               <FaGlobe className="icon" />
+//               <span>Language</span>
+//             </button>
+//             {isLangOpen && (
+//               <div className="language-options">
+//                 <button>English</button>
+//                 <button>Telugu</button>
+//                 <button>Hindi</button>
+//               </div>
+//             )}
+//           </div>
+
+//           {/* Sign In Button */}
+//           <NavLink to="/login" className="sign-in">
+//             <FaUser className="icon" />
+//             <span>Sign In</span>
+//           </NavLink>
+//         </div>
 
 //         {/* Mobile Menu */}
-//         <div className="md:hidden">
-//           <button onClick={() => setIsOpen(!isOpen)} className="text-white text-2xl">
+//         <div className="mobile-menu">
+//           <button onClick={() => setIsOpen(!isOpen)} className="menu-button">
 //             {isOpen ? <FaTimes /> : <FaBars />}
 //           </button>
 //         </div>
@@ -127,16 +63,29 @@
 
 //       {/* Mobile Nav */}
 //       {isOpen && (
-//         <div className="absolute top-full left-0 w-full bg-black bg-opacity-90 text-center py-4 md:hidden">
-//           {["Home", "Explore", "Trending", "Genres", "Watchlist"].map((item) => (
-//             <NavLink 
-//               key={item} 
-//               to={/${item.toLowerCase()}} 
-//               className="block py-2 text-lg transition hover:text-red-500"
-//             >
-//               {item}
-//             </NavLink>
-//           ))}
+//         <div className="mobile-nav">
+//           <NavLink to="/" className="mobile-nav-item">Home</NavLink>
+//           <NavLink to="/explore" className="mobile-nav-item">Explore</NavLink>
+//           <NavLink to="/trending" className="mobile-nav-item">Trending</NavLink>
+//           <NavLink to="/genres" className="mobile-nav-item">Genres</NavLink>
+//           <NavLink to="/watchlist" className="mobile-nav-item">Watchlist</NavLink>
+
+//           {/* Mobile Language Selector */}
+//           <div className="mobile-language-dropdown">
+//             <FaGlobe className="icon" />
+//             <span>Language</span>
+//             <div className="mobile-language-options">
+//               <button>English</button>
+//               <button>Telugu</button>
+//               <button>Hindi</button>
+//             </div>
+//           </div>
+
+//           {/* Mobile Sign In */}
+//           <NavLink to="/login" className="mobile-sign-in">
+//             <FaUser className="icon" />
+//             <span>Sign In</span>
+//           </NavLink>
 //         </div>
 //       )}
 //     </header>
@@ -146,92 +95,346 @@
 // export default Header;
 
 
-import { useState } from "react";
-import { FaBars, FaTimes, FaUser } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
+// Trail # 2
+
+// import { useState, useEffect } from "react";
+// import { FaBars, FaTimes, FaUser, FaGlobe } from "react-icons/fa";
+// import { NavLink, useNavigate } from "react-router-dom";
+// import "./header.css"; // Import external CSS
+
+// const Header = () => {
+//   const [isOpen, setIsOpen] = useState(false);
+//   const [isLangOpen, setIsLangOpen] = useState(false);
+//   const [isLoggedIn, setIsLoggedIn] = useState(false);
+//   const navigate = useNavigate();
+
+//   // Function to check login status
+//   const checkLoginStatus = () => {
+//     setIsLoggedIn(localStorage.getItem("isLoggedIn") === "true");
+//   };
+
+//   useEffect(() => {
+//     checkLoginStatus(); // Run when Header mounts
+
+//     // Listen for changes in localStorage (when user logs in/out)
+//     window.addEventListener("storage", checkLoginStatus);
+
+//     return () => {
+//       window.removeEventListener("storage", checkLoginStatus);
+//     };
+//   }, []);
+
+//   const handleLogout = () => {
+//     localStorage.removeItem("isLoggedIn"); // Remove login status
+//     setIsLoggedIn(false);
+//     navigate("/"); // Redirect to home page
+//   };
+
+//   return (
+//     <header className="header">
+//       <div className="overlay"></div>
+
+//       <div className="header-container">
+//         <div className="logo">ReelConnect</div>
+
+//         <nav className="nav-links">
+//           <NavLink to="/" className="nav-item">Home</NavLink>
+//           <NavLink to="/explore" className="nav-item">Explore</NavLink>
+//           <NavLink to="/trending" className="nav-item">Trending</NavLink>
+//           <NavLink to="/genres" className="nav-item">Genres</NavLink>
+//           <NavLink to="/watchlist" className="nav-item">Watchlist</NavLink>
+//         </nav>
+
+//         <div className="right-buttons">
+//           <div 
+//             className="language-dropdown" 
+//             onMouseEnter={() => setIsLangOpen(true)} 
+//             onMouseLeave={() => setIsLangOpen(false)}
+//           >
+//             <button className="language-btn">
+//               <FaGlobe className="icon" />
+//               <span>Language</span>
+//             </button>
+//             {isLangOpen && (
+//               <div className="language-options">
+//                 <button>English</button>
+//                 <button>Telugu</button>
+//                 <button>Hindi</button>
+//               </div>
+//             )}
+//           </div>
+
+//           {isLoggedIn ? (
+//             <>
+//               <NavLink to="/profile" className="profile">
+//                 <FaUser className="icon" />
+//                 <span>Profile</span>
+//               </NavLink>
+//               <button onClick={handleLogout} className="logout-btn">Logout</button>
+//             </>
+//           ) : (
+//             <NavLink to="/login" className="sign-in">
+//               <FaUser className="icon" />
+//               <span>Sign In</span>
+//             </NavLink>
+//           )}
+//         </div>
+
+//         <div className="mobile-menu">
+//           <button onClick={() => setIsOpen(!isOpen)} className="menu-button">
+//             {isOpen ? <FaTimes /> : <FaBars />}
+//           </button>
+//         </div>
+//       </div>
+
+//       {isOpen && (
+//         <div className="mobile-nav">
+//           <NavLink to="/" className="mobile-nav-item">Home</NavLink>
+//           <NavLink to="/explore" className="mobile-nav-item">Explore</NavLink>
+//           <NavLink to="/trending" className="mobile-nav-item">Trending</NavLink>
+//           <NavLink to="/genres" className="mobile-nav-item">Genres</NavLink>
+//           <NavLink to="/watchlist" className="mobile-nav-item">Watchlist</NavLink>
+
+//           <div className="mobile-language-dropdown">
+//             <FaGlobe className="icon" />
+//             <span>Language</span>
+//             <div className="mobile-language-options">
+//               <button>English</button>
+//               <button>Telugu</button>
+//               <button>Hindi</button>
+//             </div>
+//           </div>
+
+//           {isLoggedIn ? (
+//             <>
+//               <NavLink to="/profile" className="mobile-profile">
+//                 <FaUser className="icon" />
+//                 <span>Profile</span>
+//               </NavLink>
+//               <button onClick={handleLogout} className="mobile-logout-btn">Logout</button>
+//             </>
+//           ) : (
+//             <NavLink to="/login" className="mobile-sign-in">
+//               <FaUser className="icon" />
+//               <span>Sign In</span>
+//             </NavLink>
+//           )}
+//         </div>
+//       )}
+//     </header>
+//   );
+// };
+
+// export default Header;
+
+
+// import { useState, useEffect } from "react";
+// import { FaBars, FaTimes, FaUser, FaGlobe } from "react-icons/fa";
+// import { NavLink, useNavigate } from "react-router-dom";
+// import "./header.css"; // Import external CSS
+
+// const Header = () => {
+//   const [isOpen, setIsOpen] = useState(false);
+//   const [isLangOpen, setIsLangOpen] = useState(false);
+//   const [isLoggedIn, setIsLoggedIn] = useState(null); // 🚀 Fix: Start with null to prevent incorrect UI
+//   const [user, setUser] = useState(null);
+//   const navigate = useNavigate();
+
+//   useEffect(() => {
+//     const loggedInStatus = localStorage.getItem("isLoggedIn") === "true";
+//     setIsLoggedIn(loggedInStatus);
+
+//     const storedUser = localStorage.getItem("user");
+//     if (storedUser) {
+//       setUser(JSON.parse(storedUser));
+//     }
+//   }, []);
+
+//   const handleLogout = () => {
+//     localStorage.removeItem("isLoggedIn");
+//     localStorage.removeItem("user");
+//     setIsLoggedIn(false);
+//     setUser(null);
+//     navigate("/");
+//   };
+
+//   return (
+//     <header className="header">
+//       <div className="overlay"></div>
+
+//       <div className="header-container">
+//         <div className="logo">ReelConnect</div>
+
+//         <nav className="nav-links">
+//           <NavLink to="/" className="nav-item">Home</NavLink>
+//           <NavLink to="/explore" className="nav-item">Explore</NavLink>
+//           <NavLink to="/trending" className="nav-item">Trending</NavLink>
+//           <NavLink to="/genres" className="nav-item">Genres</NavLink>
+//           <NavLink to="/watchlist" className="nav-item">Watchlist</NavLink>
+//         </nav>
+
+//         <div className="right-buttons">
+//           <div 
+//             className="language-dropdown" 
+//             onMouseEnter={() => setIsLangOpen(true)} 
+//             onMouseLeave={() => setIsLangOpen(false)}
+//           >
+//             <button className="language-btn">
+//               <FaGlobe className="icon" />
+//               <span>Language</span>
+//             </button>
+//             {isLangOpen && (
+//               <div className="language-options">
+//                 <button>English</button>
+//                 <button>Telugu</button>
+//                 <button>Hindi</button>
+//               </div>
+//             )}
+//           </div>
+
+//           {/* 🚀 Fix: Prevent rendering wrong button before useEffect completes */}
+//           {isLoggedIn === null ? (
+//             <span>Loading...</span> // Optional: Can replace with a spinner
+//           ) : isLoggedIn ? (
+//             <>
+//               <NavLink to="/profile" className="profile-btn">
+//                 <FaUser className="icon" />
+//                 <span>{user ? user.username : "Profile"}</span>
+//               </NavLink>
+//               <button onClick={handleLogout} className="logout-btn">Logout</button>
+//             </>
+//           ) : (
+//             <NavLink to="/login" className="sign-in">
+//               <FaUser className="icon" />
+//               <span>Sign In</span>
+//             </NavLink>
+//           )}
+//         </div>
+
+//         <div className="mobile-menu">
+//           <button onClick={() => setIsOpen(!isOpen)} className="menu-button">
+//             {isOpen ? <FaTimes /> : <FaBars />}
+//           </button>
+//         </div>
+//       </div>
+
+//       {isOpen && (
+//         <div className="mobile-nav">
+//           <NavLink to="/" className="mobile-nav-item">Home</NavLink>
+//           <NavLink to="/explore" className="mobile-nav-item">Explore</NavLink>
+//           <NavLink to="/trending" className="mobile-nav-item">Trending</NavLink>
+//           <NavLink to="/genres" className="mobile-nav-item">Genres</NavLink>
+//           <NavLink to="/watchlist" className="mobile-nav-item">Watchlist</NavLink>
+
+//           <div className="mobile-language-dropdown">
+//             <FaGlobe className="icon" />
+//             <span>Language</span>
+//             <div className="mobile-language-options">
+//               <button>English</button>
+//               <button>Telugu</button>
+//               <button>Hindi</button>
+//             </div>
+//           </div>
+
+//           {isLoggedIn === null ? (
+//             <span>Loading...</span>
+//           ) : isLoggedIn ? (
+//             <>
+//               <NavLink to="/profile" className="mobile-profile">
+//                 <FaUser className="icon" />
+//                 <span>{user ? user.username : "Profile"}</span>
+//               </NavLink>
+//               <button onClick={handleLogout} className="mobile-logout-btn">Logout</button>
+//             </>
+//           ) : (
+//             <NavLink to="/login" className="mobile-sign-in">
+//               <FaUser className="icon" />
+//               <span>Sign In</span>
+//             </NavLink>
+//           )}
+//         </div>
+//       )}
+//     </header>
+//   );
+// };
+
+// export default Header;
+
+
+import { useState, useContext } from "react";
+import { FaBars, FaTimes, FaUser, FaGlobe } from "react-icons/fa";
+import { NavLink, useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext"; // ✅ Import AuthContext
+import "./header.css";
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+    const [isLangOpen, setIsLangOpen] = useState(false);
+    const { user, logout } = useContext(AuthContext); // ✅ Access login state
+    const navigate = useNavigate();
 
-  return (
-    <header 
-      className="relative bg-cover bg-center text-white px-6 py-4" 
-      style={{ backgroundImage: "url('/assets/background.jpg')" }}
-    >
-      {/* Dark Overlay for better visibility */}
-      <div className="absolute inset-0 bg-black bg-opacity-50 z-0"></div>
+    const handleLogout = () => {
+        logout();
+        navigate("/");
+    };
 
-      <div className="relative flex justify-between items-center z-10">
-        {/* Logo */}
-        <div className="text-red-600 text-4xl font-bold cursor-pointer">
-          MovieHive
-        </div>
+    return (
+        <header className="header">
+            <div className="overlay"></div>
 
-        {/* Navigation */}
-        <nav className="hidden md:flex w-1/2 justify-evenly text-lg">
-          <NavLink to="/" className="relative transition duration-300 hover:text-red-500">
-            Home
-          </NavLink>
-          <NavLink to="/explore" className="relative transition duration-300 hover:text-red-500">
-            Explore
-          </NavLink>
-          <NavLink to="/trending" className="relative transition duration-300 hover:text-red-500">
-            Trending
-          </NavLink>
-          <NavLink to="/genres" className="relative transition duration-300 hover:text-red-500">
-            Genres
-          </NavLink>
-          <NavLink to="/watchlist" className="relative transition duration-300 hover:text-red-500">
-            Watchlist
-          </NavLink>
-        </nav>
+            <div className="header-container">
+                <div className="logo">ReelConnect</div>
 
-        {/* 🔥 Sign In as a NavLink Styled as a Button */}
-        <NavLink 
-          to="/login"
-          className="bg-red-600 px-4 py-2 rounded hover:bg-red-700 flex items-center space-x-2 transition"
-        >
-          <FaUser />
-          <span>Sign In</span>
-        </NavLink>
+                <nav className="nav-links">
+                    <NavLink to="/" className="nav-item">Home</NavLink>
+                    <NavLink to="/dashboard" className="nav-item">Explore</NavLink>
+                    <NavLink to="/trending" className="nav-item">Trending</NavLink>
+                    <NavLink to="/genres" className="nav-item">Genres</NavLink>
+                    <NavLink to="/watchlist" className="nav-item">Watchlist</NavLink>
+                </nav>
 
-        {/* Mobile Menu */}
-        <div className="md:hidden">
-          <button onClick={() => setIsOpen(!isOpen)} className="text-white text-2xl">
-            {isOpen ? <FaTimes /> : <FaBars />}
-          </button>
-        </div>
-      </div>
+                <div className="right-buttons">
+                    <div className="language-dropdown"
+                        onMouseEnter={() => setIsLangOpen(true)} 
+                        onMouseLeave={() => setIsLangOpen(false)}
+                    >
+                        <button className="language-btn">
+                            <FaGlobe className="icon" />
+                            <span>Language</span>
+                        </button>
+                        {isLangOpen && (
+                            <div className="language-options">
+                                <button>English</button>
+                                <button>Telugu</button>
+                                <button>Hindi</button>
+                            </div>
+                        )}
+                    </div>
 
-      {/* Mobile Nav */}
-      {isOpen && (
-        <div className="absolute top-full left-0 w-full bg-black bg-opacity-90 text-center py-4 md:hidden">
-          <NavLink to="/" className="block py-2 text-lg transition hover:text-red-500">
-            Home
-          </NavLink>
-          <NavLink to="/explore" className="block py-2 text-lg transition hover:text-red-500">
-            Explore
-          </NavLink>
-          <NavLink to="/trending" className="block py-2 text-lg transition hover:text-red-500">
-            Trending
-          </NavLink>
-          <NavLink to="/genres" className="block py-2 text-lg transition hover:text-red-500">
-            Genres
-          </NavLink>
-          <NavLink to="/watchlist" className="block py-2 text-lg transition hover:text-red-500">
-            Watchlist
-          </NavLink>
-          <NavLink 
-            to="/login"
-            className="block bg-red-600 px-4 py-2 rounded hover:bg-red-700 w-fit mx-auto mt-2 flex items-center space-x-2 transition"
-          >
-            <FaUser />
-            <span>Login</span>
-          </NavLink>
-        </div>
-      )}
-    </header>
-  );
+                    {user ? ( 
+                        <>
+                            <NavLink to="/profile" className="profile-btn">
+                                <FaUser className="profile" />
+                                <span>{user.username || "Profile"}</span>
+                            </NavLink>
+                            <button onClick={handleLogout} className="logout-btn">Logout</button>
+                        </>
+                    ) : (
+                        <NavLink to="/login" className="sign-in">
+                            <FaUser className="icon" />
+                            <span>Sign In</span>
+                        </NavLink>
+                    )}
+                </div>
+
+                <div className="mobile-menu">
+                    <button onClick={() => setIsOpen(!isOpen)} className="menu-button">
+                        {isOpen ? <FaTimes /> : <FaBars />}
+                    </button>
+                </div>
+            </div>
+        </header>
+    );
 };
 
 export default Header;
