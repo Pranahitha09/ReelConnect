@@ -191,7 +191,7 @@ import { useState } from "react";
 // import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./Signup.css";
+import "./signup.css";
 
 const SignupForm = () => {
     // ✅ Hooks should always be at the top level
