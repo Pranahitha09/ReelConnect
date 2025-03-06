@@ -60,7 +60,7 @@
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
 import { Routes, Route } from "react-router-dom";
-import Layout from "../components/layout";
+import Layout from "../Components/layout";
 import Home from "../pages/landingpage";
 import LoginPage from "../pages/loginpage";
 import SignupPage from "../pages/signuppage";
