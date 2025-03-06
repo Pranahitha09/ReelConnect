@@ -60,12 +60,12 @@
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
 import { Routes, Route } from "react-router-dom";
-import Layout from "../Components/layout";
-import Home from "../pages/landingpage";
-import LoginPage from "../pages/loginpage";
-import SignupPage from "../pages/signuppage";
-import Dashboard from "../pages/dashboard";
-import Profile from "../pages/Profile"; 
+import Layout from "./Components/layout";
+import Landingpage from "./pages/landingpage";
+import Login from "./pages/loginpage";
+import Signup from "./pages/signuppage";
+import Dashboard from "./pages/dashboard";
+import Profile from "./pages/Profile";
 function App() {
     const authContext = useContext(AuthContext);
     console.log("AuthContext inside App:", authContext);  // ✅ Debugging log
@@ -73,9 +73,9 @@ function App() {
     return (
         <Routes>
             <Route path="/" element={<Layout />}>
-                <Route index element={<Home />} />
-                <Route path="login" element={<LoginPage />} />
-                <Route path="signup" element={<SignupPage />} />
+                <Route index element={<Landingpage />} />
+                <Route path="login" element={<Login />} />
+                <Route path="signup" element={<Signup />} />
                 <Route path="dashboard" element={<Dashboard />} />
                 <Route path="/profile" element={<Profile />} />
 
