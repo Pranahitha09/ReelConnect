@@ -60,11 +60,11 @@
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
 import { Routes, Route } from "react-router-dom";
-import Layout from "./components/Layout";
-import Home from "./pages/LandingPage";
-import LoginPage from "./pages/LoginPage";
-import SignupPage from "./pages/SignupPage";
-import Dashboard from "./pages/Dashboard";
+import Layout from "./components/layout";
+import Home from "./pages/landingpage";
+import LoginPage from "./pages/loginpage";
+import SignupPage from "./pages/signuppage";
+import Dashboard from "./pages/dashboard";
 import Profile from "./pages/Profile"; 
 function App() {
     const authContext = useContext(AuthContext);
